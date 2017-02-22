@@ -1,0 +1,7 @@
+#Wed Feb 22 22:36:58 CET 2017
+base.0=/Users/Guillaume/AndroidStudioProjects/OctoPocus-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_5735f71374aef06ee41c2fc8e734983b31a4a746
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/Users/Guillaume/AndroidStudioProjects/OctoPocus-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_f8580e910d3095953c69c2abedcf1f783e309225/classes.dex
+base.1=/Users/Guillaume/AndroidStudioProjects/OctoPocus-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_f8580e910d3095953c69c2abedcf1f783e309225
+file.0=/Users/Guillaume/AndroidStudioProjects/OctoPocus-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_5735f71374aef06ee41c2fc8e734983b31a4a746/classes.dex
