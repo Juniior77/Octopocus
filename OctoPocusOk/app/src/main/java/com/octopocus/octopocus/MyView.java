@@ -8,6 +8,7 @@ import android.graphics.Path;
 import android.graphics.PointF;
 import android.support.annotation.NonNull;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -87,19 +88,22 @@ public class MyView extends View {
             mMaxThickness = 40;
         }
 
-        mObjects.put("Copy", new Object("Copy", mObjectData.copyPoints, "#ccccff", "#7f7fff", mObjectScale, mMaxThickness));
-        mObjects.put("New Path: Copy", new Object("New Path: Copy", mObjectData.newCopyPath, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
-
-        mObjects.put("Paste", new Object("Paste", mObjectData.pastePoints, "#8ae32b", "#208a18", mObjectScale, mMaxThickness));
-        mObjects.put("New Path: Paste", new Object("New Path: Paste", mObjectData.newPastePath, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
-
-        mObjects.put("Select", new Object("Select", mObjectData.selectPoints, "#FE642E", "#B43104", mObjectScale, mMaxThickness));
-        mObjects.put("New Path: Select", new Object("New Path: Select", mObjectData.newSelectPath, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
-
-        mObjects.put("Cut", new Object("Cut", mObjectData.cutPoints,"#c19465", "#513211", mObjectScale, mMaxThickness));
-        mObjects.put("New Path: Cut", new Object("New Path: Cut", mObjectData.newCutPath, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
-
-        mObjects.put("New Path", new Object("New Path", mObjectData.NewPathPoints, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
+        mObjects.put("Athens", new Object("Athens", mObjectData.athens, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
+        mObjects.put("Berlin", new Object("Berlin", mObjectData.berlin, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
+        mObjects.put("Brussels", new Object("Brussels", mObjectData.brussels, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
+        mObjects.put("Dublin", new Object("Dublin", mObjectData.dublin, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
+        mObjects.put("London", new Object("London", mObjectData.london, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
+        mObjects.put("Miami", new Object("Miami", mObjectData.miami, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
+        mObjects.put("Moscow", new Object("Moscow", mObjectData.moscow, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
+        mObjects.put("Oslo", new Object("Oslo", mObjectData.oslo, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
+        mObjects.put("Paris", new Object("Paris", mObjectData.paris, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
+        mObjects.put("Rio", new Object("Rio", mObjectData.rio, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
+        mObjects.put("Rome", new Object("Rome", mObjectData.rome, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
+        mObjects.put("Sofia", new Object("Sofia", mObjectData.sofia, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
+        mObjects.put("Sydney", new Object("Sydney", mObjectData.sydney, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
+        mObjects.put("Tokyo", new Object("Tokyo", mObjectData.tokyo, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
+        mObjects.put("Toronto", new Object("Toronto", mObjectData.toronto, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
+        mObjects.put("Vienna", new Object("Vienna", mObjectData.vienna, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
     }
 
 
@@ -381,6 +385,7 @@ public class MyView extends View {
         int[] points = new int[newPath.size()];
         for (int i = 0; i < newPath.size(); i++) {
             points[i] = (int) (newPath.get(i) / mObjectScale);
+            Log.i("NEW PATH:", "NewPath: " + points[i] );
         }
         if (newPath.size() > 40) {
             mDollar.setNewPoints(mNewObjectName, points);
