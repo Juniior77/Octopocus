@@ -68,7 +68,6 @@ public class MyView extends View {
         mFeedbackPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mFeedbackPaint.setStyle(Paint.Style.STROKE);
         mFeedbackPaint.setStrokeWidth(10);
-
         mNewPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mNewPaint.setColor(Color.parseColor("#7A7A7A"));
         mNewPaint.setStyle(Paint.Style.STROKE);
@@ -88,22 +87,22 @@ public class MyView extends View {
             mMaxThickness = 40;
         }
 
-        mObjects.put("Athens", new Object("Athens", mObjectData.athens, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
-        mObjects.put("Berlin", new Object("Berlin", mObjectData.berlin, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
-        mObjects.put("Brussels", new Object("Brussels", mObjectData.brussels, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
-        mObjects.put("Dublin", new Object("Dublin", mObjectData.dublin, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
-        mObjects.put("London", new Object("London", mObjectData.london, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
-        mObjects.put("Miami", new Object("Miami", mObjectData.miami, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
-        mObjects.put("Moscow", new Object("Moscow", mObjectData.moscow, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
-        mObjects.put("Oslo", new Object("Oslo", mObjectData.oslo, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
-        mObjects.put("Paris", new Object("Paris", mObjectData.paris, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
-        mObjects.put("Rio", new Object("Rio", mObjectData.rio, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
-        mObjects.put("Rome", new Object("Rome", mObjectData.rome, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
-        mObjects.put("Sofia", new Object("Sofia", mObjectData.sofia, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
-        mObjects.put("Sydney", new Object("Sydney", mObjectData.sydney, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
-        mObjects.put("Tokyo", new Object("Tokyo", mObjectData.tokyo, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
-        mObjects.put("Toronto", new Object("Toronto", mObjectData.toronto, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
-        mObjects.put("Vienna", new Object("Vienna", mObjectData.vienna, "#7a7a7a", "#3b3b3b", mObjectScale, mMaxThickness));
+        mObjects.put("Athens", new Object("Athens", mObjectData.athens, "#408042", "#668067", mObjectScale, mMaxThickness));
+        mObjects.put("Berlin", new Object("Berlin", mObjectData.berlin, "#AAB242", "#B1B37D", mObjectScale, mMaxThickness));
+        mObjects.put("Brussels", new Object("Brussels", mObjectData.brussels, "#FBDD40", "#FBEA97", mObjectScale, mMaxThickness));
+        mObjects.put("Dublin", new Object("Dublin", mObjectData.dublin, "#F4AC41", "#F6CE93", mObjectScale, mMaxThickness));
+        mObjects.put("London", new Object("London", mObjectData.london, "#FF6B41", "#FFB09A", mObjectScale, mMaxThickness));
+        mObjects.put("Miami", new Object("Miami", mObjectData.miami, "#CD88A8", "#CDAEBC", mObjectScale, mMaxThickness));
+        mObjects.put("Moscow", new Object("Moscow", mObjectData.moscow, "#8C94F7", "#C7CAF8", mObjectScale, mMaxThickness));
+        mObjects.put("Oslo", new Object("Oslo", mObjectData.oslo, "#6097A6", "#859FA6", mObjectScale, mMaxThickness));
+        mObjects.put("Paris", new Object("Paris", mObjectData.paris, "#D1C041", "#D2C988", mObjectScale, mMaxThickness));
+        mObjects.put("Rio", new Object("Rio", mObjectData.rio, "#759A42", "#8C9A7B", mObjectScale, mMaxThickness));
+        mObjects.put("Rome", new Object("Rome", mObjectData.rome, "#FFB641", "#FFD99A", mObjectScale, mMaxThickness));
+        mObjects.put("Sofia", new Object("Sofia", mObjectData.sofia, "#E38C4F", "#E4B594", mObjectScale, mMaxThickness));
+        mObjects.put("Sydney", new Object("Sydney", mObjectData.sydney, "#E78473", "#E9B7AF", mObjectScale, mMaxThickness));
+        mObjects.put("Tokyo", new Object("Tokyo", mObjectData.tokyo, "#AF8ED2", "#C2B2D2", mObjectScale, mMaxThickness));
+        mObjects.put("Toronto", new Object("Toronto", mObjectData.toronto, "#468375", "#62837A", mObjectScale, mMaxThickness));
+        mObjects.put("Vienna", new Object("Vienna", mObjectData.vienna, "#9579D2", "#B5A8D2", mObjectScale, mMaxThickness));
     }
 
 
@@ -118,7 +117,6 @@ public class MyView extends View {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 mTime = System.currentTimeMillis();
-                //mSelectedObject.mPathPaint.setStrokeWidth(10);
                 mOnClick = true;
                 if (mFirstTouch) {
                     initMenu();
@@ -327,9 +325,6 @@ public class MyView extends View {
             } else {
                 mFeedforwardPath.lineTo(x_pos, y_pos);
             }
-//            if (x == (points.length - 2)) {
-//                canvas.drawText(object.mName, x_pos, y_pos,  object.mTextPaint);
-//            }
         }
 
         mFeedbackPaint.setStrokeWidth(object.getThickness());
@@ -343,10 +338,7 @@ public class MyView extends View {
 
 
     private void clear() {
-        if (mSaveNewPath && mNoviceMode) {
-            setNewPath();
 
-        } else {
             for (String objectName : mObjects.keySet()) {
                 Object object = mObjects.get(objectName);
                 if (object.getExcecute()) { // excecute function of command
@@ -367,11 +359,7 @@ public class MyView extends View {
                     invalidate();
                 }
             }
-        }
-
-
         mDollar.clear();
-
         mTouchUp = true;
         newPath = new ArrayList<>();
 
@@ -379,25 +367,4 @@ public class MyView extends View {
             mObjects.get(object).clear();
         }
     }
-
-    private void setNewPath() {
-        Object object = mObjects.get(mNewObjectName);
-        int[] points = new int[newPath.size()];
-        for (int i = 0; i < newPath.size(); i++) {
-            points[i] = (int) (newPath.get(i) / mObjectScale);
-            Log.i("NEW PATH:", "NewPath: " + points[i] );
-        }
-        if (newPath.size() > 40) {
-            mDollar.setNewPoints(mNewObjectName, points);
-            object.setPoints(points);
-            mTryAgain = false;
-            mSaveNewPath = false;
-        } else {
-            mTryAgain = true;
-        }
-
-    }
-
-
-
 }

@@ -77,11 +77,22 @@ public class Recognizer
 	
 	void loadTemplatesDefault()
 	{
-		Templates.addElement(loadTemplate("Copy", TemplateData.copyPoints));
-		Templates.addElement(loadTemplate("Paste", TemplateData.pastePoints));
-		Templates.addElement(loadTemplate("Select", TemplateData.selectPoints));
-		Templates.addElement(loadTemplate("Cut", TemplateData.cutPoints));
-		Templates.addElement(loadTemplate("NewPath", TemplateData.NewPathPoints));
+		Templates.addElement(loadTemplate("Athens", TemplateData.athens));
+		Templates.addElement(loadTemplate("Berlin", TemplateData.berlin));
+		Templates.addElement(loadTemplate("Brussels", TemplateData.brussels));
+		Templates.addElement(loadTemplate("Dublin", TemplateData.dublin));
+		Templates.addElement(loadTemplate("London", TemplateData.london));
+		Templates.addElement(loadTemplate("Miami", TemplateData.miami));
+		Templates.addElement(loadTemplate("Moscow", TemplateData.moscow));
+		Templates.addElement(loadTemplate("Oslo", TemplateData.oslo));
+		Templates.addElement(loadTemplate("Paris", TemplateData.paris));
+		Templates.addElement(loadTemplate("Rio", TemplateData.rio));
+		Templates.addElement(loadTemplate("Rome", TemplateData.rome));
+		Templates.addElement(loadTemplate("Sofia", TemplateData.sofia));
+		Templates.addElement(loadTemplate("Sydney", TemplateData.sydney));
+		Templates.addElement(loadTemplate("Tokyo", TemplateData.tokyo));
+		Templates.addElement(loadTemplate("Toronto", TemplateData.toronto));
+		Templates.addElement(loadTemplate("Vienna", TemplateData.vienna));
 		//Utiliser pour reconnaitre le geste, le string préciser correspond au label suivi du label Object (Score)
 	}
 	
@@ -91,7 +102,7 @@ public class Recognizer
 //		Templates.addElement(loadTemplate("circle CW", TemplateData.circlePointsCW));
 	}
 	
-	void loadTemplatesCircles()
+	public void loadTemplatesCircles()
 	{
 //		Templates.addElement(loadTemplate("circle CCW", TemplateData.circlePointsCCW));
 //		Templates.addElement(loadTemplate("circle CW", TemplateData.circlePointsCW));
@@ -148,41 +159,4 @@ public class Recognizer
 		double score = 1.0 - (b / HalfDiagonal);
 		return new Result(((Template)Templates.elementAt(t)).mName, score, t, Utils.lastTheta);
 	};
-
-	int AddTemplate(String name, Vector points)
-	{
-		Templates.addElement(new Template(name, points));
-		return Templates.size();
-	}
-	
-	int DeleteUserTemplates()
-	{
-		for (int i = Templates.size()-NumTemplates; i > 0; i--)
-		{
-			Templates.removeElementAt(Templates.size()-1);
-		}
-		
-		return Templates.size();
-	}
-
-
-	public void setNewPath(String name, int[] newPoints) {
-		int index = -1;
-		if (name.equals("Copy")) {
-			index = 0;
-		} else if (name.equals("Paste")) {
-			index = 1;
-		} else if (name.equals("Select")) {
-			index = 2;
-		} else if (name.equals("Cut")) {
-			index = 3;
-		}
-
-		if (index != -1) {
-			Template temp = (Template) Templates.get(index);
-			temp.setPoints(loadArray(newPoints));
-
-		}
-	}
-
 }

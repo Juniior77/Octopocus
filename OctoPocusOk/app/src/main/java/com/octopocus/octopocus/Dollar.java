@@ -42,11 +42,6 @@ import java.util.Vector;
 
 public class Dollar implements TouchListener
 {
-	protected int x, y;
-	protected int state;
-		
-	protected int _key = -1;
-	
 	protected boolean gesture = true; 
 	protected Vector points = new Vector(1000);
 	
@@ -56,17 +51,8 @@ public class Dollar implements TouchListener
 	protected boolean active = true;
 	
 	protected DollarListener listener = null;
-
-	public static final int GESTURES_DEFAULT = 1;
-	public static final int GESTURES_SIMPLE = 2;
-	public static final int GESTURES_CIRCLES = 3;
 	
 	protected int gestureSet;
-	
-	public Dollar()
-	{
-		this(GESTURES_SIMPLE);
-	}
 	
 	public Dollar(int gestureSet)
 	{
@@ -74,48 +60,16 @@ public class Dollar implements TouchListener
 		recognizer = new Recognizer(gestureSet);
 	}
 	
-	public void setListener(DollarListener listener)
-	{
-		this.listener = listener;
-	}
-
-	/*
-	public void render(Graphics g) 
-	{
-		if (!active)
-			return;
-		
-		Point p1, p2;
-				
-//		g.setColor(0x999999);
-		
-		for (int i = 0; i < points.size()-1; i++)
-		{
-			p1 = (Point)points.elementAt(i);
-			p2 = (Point)points.elementAt(i+1);
-			g.drawLine((int)p1.X, (int)p1.Y, (int)p2.X, (int)p2.Y);
-		}		
-	}
-	*/
-	
-	public Vector getPoints()
-	{
-		return points;
-	}
-	
 	public void addPoint(int x, int y)
 	{
-
 		if (!active)
 			return;
 		
 		points.addElement(new Point(x, y));
-//		System.out.println(x + " " + y + " " + points.size());
 	}	
 	
 	public void recognize()
 	{
-
 		if (!active)
 			return;
 
@@ -123,56 +77,15 @@ public class Dollar implements TouchListener
 			return;
 		
 		result = recognizer.Recognize(points);
-//        System.out.println("Result " + result.Name);
-//		points.removeAllElements();
 		
 		if (listener != null)
 			listener.dollarDetected(this);
-	}
-
-	public void setNewPoints(String name, int[] newPoints) {
-		recognizer.setNewPath(name, newPoints);
-	}
-
-	public Rectangle getBoundingBox()
-	{
-		return recognizer.boundingBox;
-	}
-	
-	public int[] getBounds()
-	{
-		return recognizer.bounds;
-	}
-	
-	public Point getPosition()
-	{
-		return recognizer.centroid;
 	}
 	
 	public String getName()
 	{		
 		return result.Name;
 	}
-	
-	public double getScore()
-	{
-		return result.Score;
-	}
-
-	public int getIndex()
-	{
-		return result.Index;
-	}
-
-	public void setActive(boolean state)
-	{
-		active = state;
-	}
-	
-	public boolean getActive()
-	{
-		return active;
-	}	
 	
 	public void pointerPressed(int x, int y)
 	{
