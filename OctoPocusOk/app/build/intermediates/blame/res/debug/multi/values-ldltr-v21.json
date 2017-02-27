@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\VILAIRE\\Documents\\GitHub\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\res\\merged\\debug\\values-ldltr-v21\\values-ldltr-v21.xml",
+        "outputFile": "/Users/Guillaume/Dropbox/Master/Semestre 2/Specification et Conception/OctoPocusOk - Copie/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 163
                 },
                 "from": {
-                    "file": "C:\\Users\\VILAIRE\\Documents\\GitHub\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
+                    "file": "/Users/Guillaume/Dropbox/Master/Semestre 2/Specification et Conception/OctoPocusOk - Copie/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/values-ldltr-v21/values-ldltr-v21.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -24,7 +24,7 @@
         ]
     },
     {
-        "outputFile": "C:\\Users\\Guillaume\\Desktop\\OctoPocus-master\\app\\build\\intermediates\\res\\merged\\debug\\values-ldltr-v21\\values-ldltr-v21.xml",
+        "outputFile": "/Users/Guillaume/Dropbox/Master/Semestre 2/Specification et Conception/OctoPocusOk - Copie/C:\\Users\\IKARUGA\\Desktop\\OctoPocusOk\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ldltr-v21\\values-ldltr-v21.xml",
         "map": [
             {
                 "to": {
@@ -35,7 +35,7 @@
                     "endOffset": 163
                 },
                 "from": {
-                    "file": "C:\\Users\\Guillaume\\Desktop\\OctoPocus-master\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
+                    "file": "/Users/Guillaume/Dropbox/Master/Semestre 2/Specification et Conception/OctoPocusOk - Copie/C:\\Users\\IKARUGA\\Desktop\\OctoPocusOk\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

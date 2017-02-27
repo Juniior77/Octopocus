@@ -5,7 +5,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.PointF;
 import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -17,10 +16,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-// to do: - adapt the gesture size to display size
-//        - only view the branches for copy/paste/select/cut of new path if new path was chosen
+// to do: - adapter les gestes a la taille de l'écran
 //        - hide path menu for experts
-//        - an redo/undo function?
 
 public class MyView extends View {
 
@@ -57,6 +54,7 @@ public class MyView extends View {
     private String mNewObjectName = "";
 
     private Dollar mDollar = new Dollar(1);
+    private double gesteTime;
 
 
     public MyView(Context context, AttributeSet attrs) {
@@ -106,8 +104,11 @@ public class MyView extends View {
     }
 
 
-    // source:
-    // http://stackoverflow.com/questions/31901364/android-using-ontouchlistener-in-canvas
+    /*
+        source:
+        http://stackoverflow.com/questions/31901364/android-using-ontouchlistener-in-canvas
+    */
+
 
     @Override
     public boolean onTouchEvent(@NonNull MotionEvent event) {
@@ -140,6 +141,8 @@ public class MyView extends View {
                 break;
 
             case MotionEvent.ACTION_UP:
+                gesteTime = System.currentTimeMillis() - mTime;
+                ((MainActivity) this.getContext()).executeCommand(gesteTime);
                 if (mNoviceMode == false) {
                     mDollar.recognize();
                     ((MainActivity) this.getContext()).writeDollar(mDollar);
@@ -342,7 +345,7 @@ public class MyView extends View {
             for (String objectName : mObjects.keySet()) {
                 Object object = mObjects.get(objectName);
                 if (object.getExcecute()) { // excecute function of command
-                    ((MainActivity) this.getContext()).executeCommand(object.getName());
+                    //((MainActivity) this.getContext()).executeCommand(object.getName());
                     if (object.getName().length() < 10) {
                         mSaveNewPath = false;
                     } else {

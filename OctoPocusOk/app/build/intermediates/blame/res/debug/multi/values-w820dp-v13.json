@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\Guillaume\\Desktop\\OctoPocus-master\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
+        "outputFile": "/Users/Guillaume/Dropbox/Master/Semestre 2/Specification et Conception/OctoPocusOk - Copie/C:\\Users\\IKARUGA\\Desktop\\OctoPocusOk\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,20 +11,20 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "C:\\Users\\Guillaume\\Desktop\\OctoPocus-master\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
+                    "file": "/Users/Guillaume/Dropbox/Master/Semestre 2/Specification et Conception/OctoPocusOk - Copie/C:\\Users\\IKARUGA\\Desktop\\OctoPocusOk\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 291,
+                        "startOffset": 295,
                         "endColumn": 57,
-                        "endOffset": 344
+                        "endOffset": 348
                     }
                 }
             }
         ]
     },
     {
-        "outputFile": "C:\\Users\\VILAIRE\\Documents\\GitHub\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
+        "outputFile": "/Users/Guillaume/Dropbox/Master/Semestre 2/Specification et Conception/OctoPocusOk - Copie/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -35,7 +35,7 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "C:\\Users\\VILAIRE\\Documents\\GitHub\\Octopocus\\OctoPocusOk\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
+                    "file": "/Users/Guillaume/Dropbox/Master/Semestre 2/Specification et Conception/OctoPocusOk - Copie/app/src/main/res/values-w820dp/dimens.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
