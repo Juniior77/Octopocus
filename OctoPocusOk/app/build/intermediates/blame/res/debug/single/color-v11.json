@@ -1,18 +1,26 @@
 [
     {
-        "merged": "/Users/Guillaume/Dropbox/Master/Semestre 2/Specification et Conception/OctoPocusOk - Copie/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
-        "source": "/Users/Guillaume/Dropbox/Master/Semestre 2/Specification et Conception/OctoPocusOk - Copie/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
+        "merged": "/Users/Guillaume/Desktop/Octopocus/OctoPocusOk/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/Users/Guillaume/Desktop/Octopocus/OctoPocusOk/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
     },
     {
-        "merged": "/Users/Guillaume/Dropbox/Master/Semestre 2/Specification et Conception/OctoPocusOk - Copie/C:\\Users\\IKARUGA\\Desktop\\OctoPocusOk\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
-        "source": "/Users/Guillaume/Dropbox/Master/Semestre 2/Specification et Conception/OctoPocusOk - Copie/C:\\Users\\IKARUGA\\Desktop\\OctoPocusOk\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
+        "merged": "/Users/Guillaume/Desktop/Octopocus/OctoPocusOk/C:\\Users\\Guillaume\\Desktop\\OctoPocus-master\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "/Users/Guillaume/Desktop/Octopocus/OctoPocusOk/C:\\Users\\Guillaume\\Desktop\\OctoPocus-master\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
     },
     {
-        "merged": "/Users/Guillaume/Dropbox/Master/Semestre 2/Specification et Conception/OctoPocusOk - Copie/C:\\Users\\IKARUGA\\Desktop\\OctoPocusOk\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
-        "source": "/Users/Guillaume/Dropbox/Master/Semestre 2/Specification et Conception/OctoPocusOk - Copie/C:\\Users\\IKARUGA\\Desktop\\OctoPocusOk\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+        "merged": "/Users/Guillaume/Desktop/Octopocus/OctoPocusOk/C:\\Users\\VILAIRE\\Documents\\GitHub\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/Users/Guillaume/Desktop/Octopocus/OctoPocusOk/C:\\Users\\VILAIRE\\Documents\\GitHub\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
     },
     {
-        "merged": "/Users/Guillaume/Dropbox/Master/Semestre 2/Specification et Conception/OctoPocusOk - Copie/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
-        "source": "/Users/Guillaume/Dropbox/Master/Semestre 2/Specification et Conception/OctoPocusOk - Copie/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
+        "merged": "/Users/Guillaume/Desktop/Octopocus/OctoPocusOk/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/Users/Guillaume/Desktop/Octopocus/OctoPocusOk/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "/Users/Guillaume/Desktop/Octopocus/OctoPocusOk/C:\\Users\\VILAIRE\\Documents\\GitHub\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "/Users/Guillaume/Desktop/Octopocus/OctoPocusOk/C:\\Users\\VILAIRE\\Documents\\GitHub\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "/Users/Guillaume/Desktop/Octopocus/OctoPocusOk/C:\\Users\\Guillaume\\Desktop\\OctoPocus-master\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/Users/Guillaume/Desktop/Octopocus/OctoPocusOk/C:\\Users\\Guillaume\\Desktop\\OctoPocus-master\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
     }
 ]
