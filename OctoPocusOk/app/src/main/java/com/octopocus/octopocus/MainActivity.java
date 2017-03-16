@@ -361,13 +361,13 @@ public class MainActivity extends AppCompatActivity {
                         actionOcto = false;
                         if(geste == "Athens")
                         {
-                            tempsPriseEnMain[0] = timeGeste;
+                            tempsExp[0] = timeGeste;
 
                             stop = true;
                         }
                         else
                         {
-                            erreurPriseEnMain[0] += 1;
+                            erreurExp[0] += 1;
                         }
                     }
                 }
@@ -394,13 +394,13 @@ public class MainActivity extends AppCompatActivity {
                         actionOcto = false;
                         if(geste == "Rio")
                         {
-                            tempsPriseEnMain[1] = timeGeste;
+                            tempsExp[1] = timeGeste;
 
                             stop = true;
                         }
                         else
                         {
-                            erreurPriseEnMain[1] += 1;
+                            erreurExp[1] += 1;
                         }
                     }
                 }
@@ -427,13 +427,13 @@ public class MainActivity extends AppCompatActivity {
                         actionOcto = false;
                         if(geste == "Brussels")
                         {
-                            tempsPriseEnMain[2] = timeGeste;
+                            tempsExp[2] = timeGeste;
 
                             stop = true;
                         }
                         else
                         {
-                            erreurPriseEnMain[2] += 1;
+                            erreurExp[2] += 1;
                         }
                     }
                 }
@@ -460,13 +460,13 @@ public class MainActivity extends AppCompatActivity {
                         actionOcto = false;
                         if(geste == "Sofia")
                         {
-                            tempsPriseEnMain[3] = timeGeste;
+                            tempsExp[3] = timeGeste;
 
                             stop = true;
                         }
                         else
                         {
-                            erreurPriseEnMain[3] += 1;
+                            erreurExp[3] += 1;
                         }
                     }
                 }
@@ -493,13 +493,13 @@ public class MainActivity extends AppCompatActivity {
                         actionOcto = false;
                         if(geste == "London")
                         {
-                            tempsPriseEnMain[4] = timeGeste;
+                            tempsExp[4] = timeGeste;
 
                             stop = true;
                         }
                         else
                         {
-                            erreurPriseEnMain[4] += 1;
+                            erreurExp[4] += 1;
                         }
                     }
                 }
@@ -526,13 +526,13 @@ public class MainActivity extends AppCompatActivity {
                         actionOcto = false;
                         if(geste == "Tokyo")
                         {
-                            tempsPriseEnMain[5] = timeGeste;
+                            tempsExp[5] = timeGeste;
 
                             stop = true;
                         }
                         else
                         {
-                            erreurPriseEnMain[5] += 1;
+                            erreurExp[5] += 1;
                         }
                     }
                 }
@@ -559,13 +559,13 @@ public class MainActivity extends AppCompatActivity {
                         actionOcto = false;
                         if(geste == "Moscow")
                         {
-                            tempsPriseEnMain[6] = timeGeste;
+                            tempsExp[6] = timeGeste;
 
                             stop = true;
                         }
                         else
                         {
-                            erreurPriseEnMain[6] += 1;
+                            erreurExp[6] += 1;
                         }
                     }
                 }
@@ -592,13 +592,13 @@ public class MainActivity extends AppCompatActivity {
                         actionOcto = false;
                         if(geste == "Vienna")
                         {
-                            tempsPriseEnMain[7] = timeGeste;
+                            tempsExp[7] = timeGeste;
 
                             stop = true;
                         }
                         else
                         {
-                            erreurPriseEnMain[7] += 1;
+                            erreurExp[7] += 1;
                         }
                     }
                 }
@@ -625,13 +625,13 @@ public class MainActivity extends AppCompatActivity {
                         actionOcto = false;
                         if(geste == "Oslo")
                         {
-                            tempsPriseEnMain[8] = timeGeste;
+                            tempsExp[8] = timeGeste;
 
                             stop = true;
                         }
                         else
                         {
-                            erreurPriseEnMain[8] += 1;
+                            erreurExp[8] += 1;
                         }
                     }
                 }
@@ -658,13 +658,13 @@ public class MainActivity extends AppCompatActivity {
                         actionOcto = false;
                         if(geste == "Toronto")
                         {
-                            tempsPriseEnMain[9] = timeGeste;
+                            tempsExp[9] = timeGeste;
 
                             stop = true;
                         }
                         else
                         {
-                            erreurPriseEnMain[9] += 1;
+                            erreurExp[9] += 1;
                         }
                     }
                 }
@@ -691,13 +691,13 @@ public class MainActivity extends AppCompatActivity {
                         actionOcto = false;
                         if(geste == "Miami")
                         {
-                            tempsPriseEnMain[10] = timeGeste;
+                            tempsExp[10] = timeGeste;
 
                             stop = true;
                         }
                         else
                         {
-                            erreurPriseEnMain[10] += 1;
+                            erreurExp[10] += 1;
                         }
                     }
                 }
@@ -724,13 +724,13 @@ public class MainActivity extends AppCompatActivity {
                         actionOcto = false;
                         if(geste == "Sydney")
                         {
-                            tempsPriseEnMain[11] = timeGeste;
+                            tempsExp[11] = timeGeste;
 
                             stop = true;
                         }
                         else
                         {
-                            erreurPriseEnMain[11] += 1;
+                            erreurExp[11] += 1;
                         }
                     }
                 }
@@ -757,13 +757,13 @@ public class MainActivity extends AppCompatActivity {
                         actionOcto = false;
                         if(geste == "Dublin")
                         {
-                            tempsPriseEnMain[12] = timeGeste;
+                            tempsExp[12] = timeGeste;
 
                             stop = true;
                         }
                         else
                         {
-                            erreurPriseEnMain[12] += 1;
+                            erreurExp[12] += 1;
                         }
                     }
                 }
@@ -790,13 +790,13 @@ public class MainActivity extends AppCompatActivity {
                         actionOcto = false;
                         if(geste == "Rome")
                         {
-                            tempsPriseEnMain[13] = timeGeste;
+                            tempsExp[13] = timeGeste;
 
                             stop = true;
                         }
                         else
                         {
-                            erreurPriseEnMain[13] += 1;
+                            erreurExp[13] += 1;
                         }
                     }
                 }
@@ -823,13 +823,13 @@ public class MainActivity extends AppCompatActivity {
                         actionOcto = false;
                         if(geste == "Berlin")
                         {
-                            tempsPriseEnMain[14] = timeGeste;
+                            tempsExp[14] = timeGeste;
 
                             stop = true;
                         }
                         else
                         {
-                            erreurPriseEnMain[14] += 1;
+                            erreurExp[14] += 1;
                         }
                     }
                 }
@@ -856,13 +856,13 @@ public class MainActivity extends AppCompatActivity {
                         actionOcto = false;
                         if(geste == "Paris")
                         {
-                            tempsPriseEnMain[15] = timeGeste;
+                            tempsExp[15] = timeGeste;
 
                             stop = true;
                         }
                         else
                         {
-                            erreurPriseEnMain[15] += 1;
+                            erreurExp[15] += 1;
                         }
                     }
                 }
@@ -1050,193 +1050,193 @@ public class MainActivity extends AppCompatActivity {
         else if(exp1)
         {
             if(resultat.equals("Athens")) {
-                tempsExp[0] = totalAction;
+                tempsExpM[0] = totalAction;
                 exp1 = false;
                 Experimentation2();
             }
             else
             {
-                erreurExp[0] += 1;
+                erreurExpM[0] += 1;
             }
         }
         else if(exp2)
         {
             if(resultat.equals("Rio")) {
-                tempsExp[1] = totalAction;
+                tempsExpM[1] = totalAction;
                 exp2 = false;
                 Experimentation3();
             }
             else
             {
-                erreurExp[1] += 1;
+                erreurExpM[1] += 1;
             }
         }
         else if(exp3)
         {
             if(resultat.equals("Brussels")) {
-                tempsExp[2] = totalAction;
+                tempsExpM[2] = totalAction;
                 exp3 = false;
                 Experimentation4();
             }
             else
             {
-                erreurExp[2] += 1;
+                erreurExpM[2] += 1;
             }
         }
         else if(exp4)
         {
             if(resultat.equals("Sofia")) {
-                tempsExp[3] = totalAction;
+                tempsExpM[3] = totalAction;
                 exp4 = false;
                 Experimentation5();
             }
             else
             {
-                erreurExp[3] += 1;
+                erreurExpM[3] += 1;
             }
         }
         else if(exp5)
         {
             if(resultat.equals("London")) {
-                tempsExp[4] = totalAction;
+                tempsExpM[4] = totalAction;
                 exp5 = false;
                 Experimentation6();
             }
             else
             {
-                erreurExp[4] += 1;
+                erreurExpM[4] += 1;
             }
         }
         else if(exp6)
         {
             if(resultat.equals("Tokyo")) {
-                tempsExp[5] = totalAction;
+                tempsExpM[5] = totalAction;
                 exp6 = false;
                 Experimentation7();
             }
             else
             {
-                erreurExp[5] += 1;
+                erreurExpM[5] += 1;
             }
         }
         else if(exp7)
         {
             if(resultat.equals("Moscow")) {
-                tempsExp[6] = totalAction;
+                tempsExpM[6] = totalAction;
                 exp7 = false;
                 Experimentation8();
             }
             else
             {
-                erreurExp[6] += 1;
+                erreurExpM[6] += 1;
             }
         }
         else if(exp8)
         {
             if(resultat.equals("Vienna")) {
-                tempsExp[7] = totalAction;
+                tempsExpM[7] = totalAction;
                 exp8 = false;
                 Experimentation9();
             }
             else
             {
-                erreurExp[7] += 1;
+                erreurExpM[7] += 1;
             }
         }
         else if(exp9)
         {
             if(resultat.equals("Oslo")) {
-                tempsExp[8] = totalAction;
+                tempsExpM[8] = totalAction;
                 exp9 = false;
                 Experimentation10();
             }
             else
             {
-                erreurExp[8] += 1;
+                erreurExpM[8] += 1;
             }
         }
         else if(exp10)
         {
             if(resultat.equals("Toronto")) {
-                tempsExp[9] = totalAction;
+                tempsExpM[9] = totalAction;
                 exp10 = false;
                 Experimentation11();
             }
             else
             {
-                erreurExp[9] += 1;
+                erreurExpM[9] += 1;
             }
         }
         else if(exp11)
         {
             if(resultat.equals("Miami")) {
-                tempsExp[10] = totalAction;
+                tempsExpM[10] = totalAction;
                 exp11 = false;
                 Experimentation12();
             }
             else
             {
-                erreurExp[10] += 1;
+                erreurExpM[10] += 1;
             }
         }
         else if(exp12)
         {
             if(resultat.equals("Sydney")) {
-                tempsExp[11] = totalAction;
+                tempsExpM[11] = totalAction;
                 exp12 = false;
                 Experimentation13();
             }
             else
             {
-                erreurExp[11] += 1;
+                erreurExpM[11] += 1;
             }
         }
         else if(exp13)
         {
             if(resultat.equals("Dublin")) {
-                tempsExp[12] = totalAction;
+                tempsExpM[12] = totalAction;
                 exp13 = false;
                 Experimentation14();
             }
             else
             {
-                erreurExp[12] += 1;
+                erreurExpM[12] += 1;
             }
         }
         else if(exp14)
         {
             if(resultat.equals("Rome")) {
-                tempsExp[13] = totalAction;
+                tempsExpM[13] = totalAction;
                 exp14 = false;
                 Experimentation15();
             }
             else
             {
-                erreurExp[13] += 1;
+                erreurExpM[13] += 1;
             }
         }
         else if(exp15)
         {
             if(resultat.equals("Berlin")) {
-                tempsExp[14] = totalAction;
+                tempsExpM[14] = totalAction;
                 exp15 = false;
                 Experimentation16();
             }
             else
             {
-                erreurExp[14] += 1;
+                erreurExpM[14] += 1;
             }
         }
         else if(exp16)
         {
             if(resultat.equals("Paris")) {
-                tempsExp[15] = totalAction;
+                tempsExpM[15] = totalAction;
                 exp16 = false;
                 ResultExperimentation();
             }
             else
             {
-                erreurExp[15] += 1;
+                erreurExpM[15] += 1;
             }
         }
     }
