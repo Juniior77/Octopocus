@@ -1,18 +1,22 @@
 [
     {
-        "merged": "C:\\Users\\Guillaume\\Desktop\\Octopocus\\OctoPocusOk\\C:\\Users\\VILAIRE\\Documents\\GitHub\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23\\abc_control_background_material.xml",
-        "source": "C:\\Users\\Guillaume\\Desktop\\Octopocus\\OctoPocusOk\\C:\\Users\\VILAIRE\\Documents\\GitHub\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable-v23\\abc_control_background_material.xml"
+        "merged": "/Users/Guillaume/AndroidStudioProjects/Octopocus/OctoPocusOk/C:\\Users\\VILAIRE\\Documents\\GitHub\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23\\abc_control_background_material.xml",
+        "source": "/Users/Guillaume/AndroidStudioProjects/Octopocus/OctoPocusOk/C:\\Users\\VILAIRE\\Documents\\GitHub\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable-v23\\abc_control_background_material.xml"
     },
     {
-        "merged": "C:\\Users\\Guillaume\\Desktop\\Octopocus\\OctoPocusOk\\C:\\Users\\Guillaume\\Desktop\\OctoPocus-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23\\abc_control_background_material.xml",
-        "source": "C:\\Users\\Guillaume\\Desktop\\Octopocus\\OctoPocusOk\\C:\\Users\\Guillaume\\Desktop\\OctoPocus-master\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable-v23\\abc_control_background_material.xml"
+        "merged": "/Users/Guillaume/AndroidStudioProjects/Octopocus/OctoPocusOk/app/build/intermediates/res/merged/debug/drawable-v23/abc_control_background_material.xml",
+        "source": "/Users/Guillaume/AndroidStudioProjects/Octopocus/OctoPocusOk/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable-v23/abc_control_background_material.xml"
     },
     {
-        "merged": "C:\\Users\\VILAIRE\\Documents\\GitHub\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23\\abc_control_background_material.xml",
-        "source": "C:\\Users\\VILAIRE\\Documents\\GitHub\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable-v23\\abc_control_background_material.xml"
+        "merged": "/Users/Guillaume/AndroidStudioProjects/Octopocus/OctoPocusOk/C:\\Users\\Guillaume\\Desktop\\Octopocus\\OctoPocusOk\\C:\\Users\\Guillaume\\Desktop\\OctoPocus-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23\\abc_control_background_material.xml",
+        "source": "/Users/Guillaume/AndroidStudioProjects/Octopocus/OctoPocusOk/C:\\Users\\Guillaume\\Desktop\\Octopocus\\OctoPocusOk\\C:\\Users\\Guillaume\\Desktop\\OctoPocus-master\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable-v23\\abc_control_background_material.xml"
     },
     {
-        "merged": "C:\\Users\\Guillaume\\Desktop\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23\\abc_control_background_material.xml",
-        "source": "C:\\Users\\Guillaume\\Desktop\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable-v23\\abc_control_background_material.xml"
+        "merged": "/Users/Guillaume/AndroidStudioProjects/Octopocus/OctoPocusOk/C:\\Users\\Guillaume\\Desktop\\Octopocus\\OctoPocusOk\\C:\\Users\\VILAIRE\\Documents\\GitHub\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23\\abc_control_background_material.xml",
+        "source": "/Users/Guillaume/AndroidStudioProjects/Octopocus/OctoPocusOk/C:\\Users\\Guillaume\\Desktop\\Octopocus\\OctoPocusOk\\C:\\Users\\VILAIRE\\Documents\\GitHub\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable-v23\\abc_control_background_material.xml"
+    },
+    {
+        "merged": "/Users/Guillaume/AndroidStudioProjects/Octopocus/OctoPocusOk/C:\\Users\\Guillaume\\Desktop\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23\\abc_control_background_material.xml",
+        "source": "/Users/Guillaume/AndroidStudioProjects/Octopocus/OctoPocusOk/C:\\Users\\Guillaume\\Desktop\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable-v23\\abc_control_background_material.xml"
     }
 ]

@@ -7,7 +7,12 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.InstrumentationInfo;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Environment;
+import android.os.SystemClock;
+import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -15,11 +20,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView objectText;
+    private TextView objectInfo;
     private Button btnMenu;
     private Button btnHelp;
     private Button btnTest;
@@ -29,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
     public static  String geste = null;
     public boolean actionOcto = false;
     public String resultat;
+    public String priseEnMain;
+    public String expString;
 
     public boolean test1 = true, test2 = true, test3 = true, test4 = true, test5 = true, test6 = true, test7 = true, test8 = true;
     public boolean exp1 = true, exp2 = true, exp3 = true, exp4 = true, exp5 = true, exp6 = true, exp7 = true, exp8 = true,
@@ -76,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         objectText = (TextView) findViewById(R.id.object_name); // --> not used anymore
+        objectInfo = (TextView)findViewById(R.id.textView2);
         btnMenu = (Button)findViewById(R.id.btnMenu);
         btnHelp = (Button)findViewById(R.id.btnHelp);
         btnTest = (Button)findViewById(R.id.button);
@@ -917,6 +936,94 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void construireStringExperience(){
+        expString = "Expérimentation:\n" + ";Athens;Rio;Brussels;Sofia;London;Tokyo;Moscow;Vienna;Oslo;Toronto;Miami;Sydney;Dublin;Rome;Berlin;Paris\n" +
+                "Erreur Octopocus:;" + erreurExp[0]+";"+erreurExp[1]+";"+erreurExp[2]+";"+
+                erreurExp[3]+";"+erreurExp[4]+";"+erreurExp[5]+";"+erreurExp[6]+";"+
+                erreurExp[7]+";"+erreurExp[8]+";"+erreurExp[9]+";"+erreurExp[10]+";"+
+                erreurExp[11]+";"+erreurExp[12]+";"+erreurExp[13]+";"+erreurExp[14]+";"+
+                erreurExp[15]+"\n" +
+                "Temps OctoPocus:;"+tempsExp[0]+";"+tempsExp[1]+";"+tempsExp[2]+";"+tempsExp[3]+";"+
+                tempsExp[4]+";"+tempsExp[5]+";"+tempsExp[6]+";"+tempsExp[7]+";"+
+                tempsExp[8]+";"+tempsExp[9]+";"+tempsExp[10]+";"+tempsExp[11]+";"+
+                tempsExp[12]+";"+tempsExp[13]+";"+tempsExp[14]+";"+tempsExp[15]+"\n" +
+                "Erreur Menu:;"+ erreurExpM[0]+";"+erreurExpM[1]+";"+erreurExpM[2]+";"+
+                erreurExpM[3]+";"+erreurExpM[4]+";"+erreurExpM[5]+";"+erreurExpM[6]+";"+
+                erreurExpM[7]+";"+erreurExpM[8]+";"+erreurExpM[9]+";"+erreurExpM[10]+";"+
+                erreurExpM[11]+";"+erreurExpM[12]+";"+erreurExpM[13]+";"+erreurExpM[14]+";"+
+                erreurExpM[15]+"\n" +
+                "Temps Menu:;" +tempsExpM[0]+";"+tempsExpM[1]+";"+tempsExpM[2]+";"+tempsExpM[3]+";"+
+                tempsExpM[4]+";"+tempsExpM[5]+";"+tempsExpM[6]+";"+tempsExpM[7]+";"+
+                tempsExpM[8]+";"+tempsExpM[9]+";"+tempsExpM[10]+";"+tempsExpM[11]+";"+
+                tempsExpM[12]+";"+tempsExpM[13]+";"+tempsExpM[14]+";"+tempsExpM[15]+"\n";
+        ecrireFicherExp();
+    }
+    private void ecrireFicherExp() {
+
+        String filepath ="/mnt/sdcard/Experimentation"+System.currentTimeMillis()+".txt";
+        FileOutputStream fos = null;
+        try {
+            fos = new FileOutputStream(filepath);
+            byte[] buffer = expString.getBytes();
+            fos.write(buffer, 0, buffer.length);
+            fos.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally{
+            if(fos != null)
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+        }
+
+    }
+
+    private void construireStringPriseEnMain(){
+        priseEnMain = "Prise en Main:\n" + ";Paris;Berlin;Rome;Dublin;Sydney;Miami;Toronto;Oslo\n" +
+                "Erreur Octopocus:;" + erreurPriseEnMain[0]+";"+erreurPriseEnMain[1]+";"+erreurPriseEnMain[2]+";"+
+                erreurPriseEnMain[3]+";"+erreurPriseEnMain[4]+";"+erreurPriseEnMain[5]+";"+erreurPriseEnMain[6]+";"+
+                erreurPriseEnMain[7]+"\n" +
+                "Temps OctoPocus:;"+tempsPriseEnMain[0]+";"+tempsPriseEnMain[1]+";"+tempsPriseEnMain[2]+";"+
+                tempsPriseEnMain[3]+";"+tempsPriseEnMain[4]+";"+tempsPriseEnMain[5]+";"+tempsPriseEnMain[6]+";"+
+                tempsPriseEnMain[7]+"\n" +
+                "Erreur Menu:;" + erreurPriseEnMainM[0]+";"+erreurPriseEnMainM[1]+";"+erreurPriseEnMainM[2]+";"+
+                erreurPriseEnMainM[3]+";"+erreurPriseEnMainM[4]+";"+erreurPriseEnMainM[5]+";"+erreurPriseEnMainM[6]+";"+
+                erreurPriseEnMainM[7]+"\n" +
+                "Temps Menu:;"+tempsPriseEnMainM[0]+";"+tempsPriseEnMainM[1]+";"+tempsPriseEnMainM[2]+";"+
+                tempsPriseEnMainM[3]+";"+tempsPriseEnMainM[4]+";"+tempsPriseEnMainM[5]+";"+tempsPriseEnMainM[6]+";"+
+                tempsPriseEnMainM[7]+"\n";
+        ecrireFicherPriseEnMain();
+
+    }
+
+    private void ecrireFicherPriseEnMain() {
+
+        String filepath ="/mnt/sdcard/priseEnMain"+System.currentTimeMillis()+".txt";
+        FileOutputStream fos = null;
+        try {
+            fos = new FileOutputStream(filepath);
+            byte[] buffer = priseEnMain.getBytes();
+            fos.write(buffer, 0, buffer.length);
+            fos.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally{
+            if(fos != null)
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+        }
+
+    }
+
     public void startHelp(){
         Intent intentHelp = new Intent(this, help.class);
         startActivity(intentHelp);
@@ -1037,6 +1144,7 @@ public class MainActivity extends AppCompatActivity {
             if(resultat.equals("Oslo")) {
                 tempsPriseEnMainM[7] = totalAction;
                 test8 = false;
+                construireStringPriseEnMain();
                 startExperimentation();
             }
             else
@@ -1232,7 +1340,7 @@ public class MainActivity extends AppCompatActivity {
             if(resultat.equals("Paris")) {
                 tempsExpM[15] = totalAction;
                 exp16 = false;
-                ResultExperimentation();
+                construireStringExperience();
             }
             else
             {
@@ -1243,6 +1351,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void startTest()
     {
+        ImageView img = new ImageView(this);
+        img.setImageResource(R.drawable.paris);
         AlertDialog.Builder dlgTest1 = new AlertDialog.Builder(MainActivity.this);
         dlgTest1.setTitle("Prise en main");
         dlgTest1.setMessage("Geste Octopocus: Paris");
@@ -1250,9 +1360,11 @@ public class MainActivity extends AppCompatActivity {
         dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener(){
             public void onClick(DialogInterface dialog, int wichButton){
                 dialog.dismiss();
+                objectInfo.setText("Geste OctoPocus: Paris");
                 mThread1.start();
             }
         });
+        dlgTest1.setView(img);
         dlgTest1.setCancelable(true);
         dlgTest1.create().show();
     }
@@ -1270,6 +1382,7 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste Menu: Paris");
                     }
                 });
                 dlgTest1.setCancelable(true);
@@ -1279,9 +1392,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void SecondTest(){
+        final ImageView imgBerlin = new ImageView(this);
+        imgBerlin.setImageResource(R.drawable.berlin);
         MainActivity.this.runOnUiThread(new Runnable() {
+
             @Override
             public void run() {
+
                 AlertDialog.Builder dlgTest2 = new AlertDialog.Builder(MainActivity.this);
                 dlgTest2.setTitle("Prise en main");
                 dlgTest2.setMessage("Geste Octopocus: Berlin");
@@ -1289,9 +1406,11 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest2.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste OctoPocus: Berlin");
                         mThread2.start();
                     }
                 });
+                dlgTest2.setView(imgBerlin);
                 dlgTest2.setCancelable(true);
                 dlgTest2.create();
                 dlgTest2.show();
@@ -1311,6 +1430,7 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste Menu: Berlin");
                     }
                 });
                 dlgTest1.setCancelable(true);
@@ -1320,6 +1440,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void troisiemeTest()
     {
+        final ImageView imgRome = new ImageView(this);
+        imgRome.setImageResource(R.drawable.rome);
         MainActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -1330,9 +1452,11 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest3.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste OctoPocus: Rome");
                         mThread3.start();
                     }
                 });
+                dlgTest3.setView(imgRome);
                 dlgTest3.setCancelable(true);
                 dlgTest3.create();
                 dlgTest3.show();
@@ -1352,6 +1476,7 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste Menu: Rome");
                     }
                 });
                 dlgTest1.setCancelable(true);
@@ -1361,6 +1486,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void quatriemeTest()
     {
+        final ImageView img = new ImageView(this);
+        img.setImageResource(R.drawable.dublin);
         MainActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -1371,9 +1498,11 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest4.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste OctoPocus: Dublin");
                         mThread4.start();
                     }
                 });
+                dlgTest4.setView(img);
                 dlgTest4.setCancelable(true);
                 dlgTest4.create();
                 dlgTest4.show();
@@ -1393,6 +1522,7 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste Menu: Dublin");
                     }
                 });
                 dlgTest1.setCancelable(true);
@@ -1401,6 +1531,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     public void cinquiemeTest(){
+        final ImageView img = new ImageView(this);
+        img.setImageResource(R.drawable.sydney);
         MainActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -1411,9 +1543,11 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest5.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste OctoPocus: Sydney");
                         mThread5.start();
                     }
                 });
+                dlgTest5.setView(img);
                 dlgTest5.setCancelable(true);
                 dlgTest5.create();
                 dlgTest5.show();
@@ -1433,6 +1567,7 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste Menu: Sydney");
                     }
                 });
                 dlgTest1.setCancelable(true);
@@ -1441,6 +1576,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     public void sixiemeTest(){
+        final ImageView img = new ImageView(this);
+        img.setImageResource(R.drawable.miami);
         MainActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -1451,9 +1588,11 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest6.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste OctoPocus: Miami");
                         mThread6.start();
                     }
                 });
+                dlgTest6.setView(img);
                 dlgTest6.setCancelable(true);
                 dlgTest6.create();
                 dlgTest6.show();
@@ -1473,6 +1612,7 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste Menu: Miami");
                     }
                 });
                 dlgTest1.setCancelable(true);
@@ -1481,6 +1621,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     public void septiemeTest(){
+        final ImageView img = new ImageView(this);
+        img.setImageResource(R.drawable.toronto);
         MainActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -1491,9 +1633,11 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest7.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste OctoPocus: Toronto");
                         mThread7.start();
                     }
                 });
+                dlgTest7.setView(img);
                 dlgTest7.setCancelable(true);
                 dlgTest7.create();
                 dlgTest7.show();
@@ -1513,6 +1657,7 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste Menu: Toronto");
                     }
                 });
                 dlgTest1.setCancelable(true);
@@ -1521,6 +1666,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     public void huitiemeTest(){
+        final ImageView img = new ImageView(this);
+        img.setImageResource(R.drawable.oslo);
         MainActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -1531,9 +1678,11 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest8.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste OctoPocus: Oslo");
                         mThread8.start();
                     }
                 });
+                dlgTest8.setView(img);
                 dlgTest8.setCancelable(true);
                 dlgTest8.create();
                 dlgTest8.show();
@@ -1553,6 +1702,7 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste Menu: Oslo");
                     }
                 });
                 dlgTest1.setCancelable(true);
@@ -1582,14 +1732,41 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 AlertDialog.Builder dlgTest1 = new AlertDialog.Builder(MainActivity.this);
                 dlgTest1.setTitle("Expérimentation");
+                dlgTest1.setMessage("L'expérimenation commence.");
+                dlgTest1.setMessage("Déroulement:");
+                dlgTest1.setMessage("- Geste Octopocus Expert");
+                dlgTest1.setMessage("- Menu contextuel");
+                //dlgTest1.setMessage("- Geste Octopocus Novice");
+                //Création d'un bouton "OK" dans notre fenetre Dialog
+                dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener(){
+                    public void onClick(DialogInterface dialog, int wichButton){
+                        dialog.dismiss();
+                        Experimentation1();
+                    }
+                });
+                dlgTest1.setCancelable(true);
+                dlgTest1.create().show();
+            }
+        });
+    }
+    public void Experimentation1(){
+        final ImageView img = new ImageView(this);
+        img.setImageResource(R.drawable.athens);
+        MainActivity.this.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                AlertDialog.Builder dlgTest1 = new AlertDialog.Builder(MainActivity.this);
+                dlgTest1.setTitle("Expérimentation");
                 dlgTest1.setMessage("Octopocus: Athens");
                 //Création d'un bouton "OK" dans notre fenetre Dialog
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste OctoPocus: Athens");
                         mThread10.start();
                     }
                 });
+                dlgTest1.setView(img);
                 dlgTest1.setCancelable(true);
                 dlgTest1.create().show();
             }
@@ -1607,6 +1784,7 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int wichButton) {
                         dialog.dismiss();
+                        objectInfo.setText("Geste Menu: Athens");
                     }
                 });
                 dlgTest1.setCancelable(true);
@@ -1616,6 +1794,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void Experimentation2()
     {
+        final ImageView img = new ImageView(this);
+        img.setImageResource(R.drawable.rio);
         MainActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -1626,9 +1806,11 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste OctoPocus: Rio");
                         mThread11.start();
                     }
                 });
+                dlgTest1.setView(img);
                 dlgTest1.setCancelable(true);
                 dlgTest1.create().show();
             }
@@ -1646,6 +1828,7 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int wichButton) {
                         dialog.dismiss();
+                        objectInfo.setText("Geste Menu: Rio");
                     }
                 });
                 dlgTest1.setCancelable(true);
@@ -1655,6 +1838,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void Experimentation3()
     {
+        final ImageView img = new ImageView(this);
+        img.setImageResource(R.drawable.brussels);
         MainActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -1665,9 +1850,11 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste OctoPocus: Brussels");
                         mThread12.start();
                     }
                 });
+                dlgTest1.setView(img);
                 dlgTest1.setCancelable(true);
                 dlgTest1.create().show();
             }
@@ -1685,6 +1872,7 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int wichButton) {
                         dialog.dismiss();
+                        objectInfo.setText("Geste Menu: Brussels");
                     }
                 });
                 dlgTest1.setCancelable(true);
@@ -1694,6 +1882,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void Experimentation4()
     {
+        final ImageView img = new ImageView(this);
+        img.setImageResource(R.drawable.sofia);
         MainActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -1704,9 +1894,11 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste OctoPocus: Sofia");
                         mThread13.start();
                     }
                 });
+                dlgTest1.setView(img);
                 dlgTest1.setCancelable(true);
                 dlgTest1.create().show();
             }
@@ -1724,6 +1916,7 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int wichButton) {
                         dialog.dismiss();
+                        objectInfo.setText("Geste Menu: Sofia");
                     }
                 });
                 dlgTest1.setCancelable(true);
@@ -1733,6 +1926,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void Experimentation5()
     {
+        final ImageView img = new ImageView(this);
+        img.setImageResource(R.drawable.london);
         MainActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -1743,9 +1938,11 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste OctoPocus: London");
                         mThread14.start();
                     }
                 });
+                dlgTest1.setView(img);
                 dlgTest1.setCancelable(true);
                 dlgTest1.create().show();
             }
@@ -1763,6 +1960,7 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int wichButton) {
                         dialog.dismiss();
+                        objectInfo.setText("Geste Menu: London");
                     }
                 });
                 dlgTest1.setCancelable(true);
@@ -1772,6 +1970,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void Experimentation6()
     {
+        final ImageView img = new ImageView(this);
+        img.setImageResource(R.drawable.tokyo);
         MainActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -1782,9 +1982,11 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste OctoPocus: Tokyo");
                         mThread15.start();
                     }
                 });
+                dlgTest1.setView(img);
                 dlgTest1.setCancelable(true);
                 dlgTest1.create().show();
             }
@@ -1802,6 +2004,7 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int wichButton) {
                         dialog.dismiss();
+                        objectInfo.setText("Geste Menu: Tokyo");
                     }
                 });
                 dlgTest1.setCancelable(true);
@@ -1811,6 +2014,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void Experimentation7()
     {
+        final ImageView img = new ImageView(this);
+        img.setImageResource(R.drawable.moscow);
         MainActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -1821,9 +2026,11 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste OctoPocus: Moscow");
                         mThread16.start();
                     }
                 });
+                dlgTest1.setView(img);
                 dlgTest1.setCancelable(true);
                 dlgTest1.create().show();
             }
@@ -1841,6 +2048,7 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int wichButton) {
                         dialog.dismiss();
+                        objectInfo.setText("Geste Menu: Moscow");
                     }
                 });
                 dlgTest1.setCancelable(true);
@@ -1850,6 +2058,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void Experimentation8()
     {
+        final ImageView img = new ImageView(this);
+        img.setImageResource(R.drawable.vienna);
         MainActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -1860,9 +2070,11 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste OctoPocus: Vienna");
                         mThread17.start();
                     }
                 });
+                dlgTest1.setView(img);
                 dlgTest1.setCancelable(true);
                 dlgTest1.create().show();
             }
@@ -1880,6 +2092,7 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int wichButton) {
                         dialog.dismiss();
+                        objectInfo.setText("Geste Menu: Vienna");
                     }
                 });
                 dlgTest1.setCancelable(true);
@@ -1889,6 +2102,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void Experimentation9()
     {
+        final ImageView img = new ImageView(this);
+        img.setImageResource(R.drawable.oslo);
         MainActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -1899,9 +2114,11 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste OctoPocus: Oslo");
                         mThread18.start();
                     }
                 });
+                dlgTest1.setView(img);
                 dlgTest1.setCancelable(true);
                 dlgTest1.create().show();
             }
@@ -1919,6 +2136,7 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int wichButton) {
                         dialog.dismiss();
+                        objectInfo.setText("Geste Menu: Oslo");
                     }
                 });
                 dlgTest1.setCancelable(true);
@@ -1928,6 +2146,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void Experimentation10()
     {
+        final ImageView img = new ImageView(this);
+        img.setImageResource(R.drawable.toronto);
         MainActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -1938,9 +2158,11 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste OctoPocus: Toronto");
                         mThread19.start();
                     }
                 });
+                dlgTest1.setView(img);
                 dlgTest1.setCancelable(true);
                 dlgTest1.create().show();
             }
@@ -1958,6 +2180,7 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int wichButton) {
                         dialog.dismiss();
+                        objectInfo.setText("Geste Menu: Toronto");
                     }
                 });
                 dlgTest1.setCancelable(true);
@@ -1967,6 +2190,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void Experimentation11()
     {
+        final ImageView img = new ImageView(this);
+        img.setImageResource(R.drawable.miami);
         MainActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -1977,9 +2202,11 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste OctoPocus: Miami");
                         mThread20.start();
                     }
                 });
+                dlgTest1.setView(img);
                 dlgTest1.setCancelable(true);
                 dlgTest1.create().show();
             }
@@ -1997,6 +2224,7 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int wichButton) {
                         dialog.dismiss();
+                        objectInfo.setText("Geste Menu: Miami");
                     }
                 });
                 dlgTest1.setCancelable(true);
@@ -2006,6 +2234,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void Experimentation12()
     {
+        final ImageView img = new ImageView(this);
+        img.setImageResource(R.drawable.sydney);
         MainActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -2016,9 +2246,11 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste OctoPocus: Sydney");
                         mThread21.start();
                     }
                 });
+                dlgTest1.setView(img);
                 dlgTest1.setCancelable(true);
                 dlgTest1.create().show();
             }
@@ -2036,6 +2268,7 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int wichButton) {
                         dialog.dismiss();
+                        objectInfo.setText("Geste Menu: Sydney");
                     }
                 });
                 dlgTest1.setCancelable(true);
@@ -2045,6 +2278,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void Experimentation13()
     {
+        final ImageView img = new ImageView(this);
+        img.setImageResource(R.drawable.dublin);
         MainActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -2055,9 +2290,11 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste OctoPocus: Dublin");
                         mThread22.start();
                     }
                 });
+                dlgTest1.setView(img);
                 dlgTest1.setCancelable(true);
                 dlgTest1.create().show();
             }
@@ -2075,6 +2312,7 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int wichButton) {
                         dialog.dismiss();
+                        objectInfo.setText("Geste Menu: Dublin");
                     }
                 });
                 dlgTest1.setCancelable(true);
@@ -2084,6 +2322,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void Experimentation14()
     {
+        final ImageView img = new ImageView(this);
+        img.setImageResource(R.drawable.rome);
         MainActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -2094,9 +2334,11 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste OctoPocus: Rome");
                         mThread23.start();
                     }
                 });
+                dlgTest1.setView(img);
                 dlgTest1.setCancelable(true);
                 dlgTest1.create().show();
             }
@@ -2114,6 +2356,7 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int wichButton) {
                         dialog.dismiss();
+                        objectInfo.setText("Geste Menu: Rome");
                     }
                 });
                 dlgTest1.setCancelable(true);
@@ -2123,6 +2366,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void Experimentation15()
     {
+        final ImageView img = new ImageView(this);
+        img.setImageResource(R.drawable.berlin);
         MainActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -2133,9 +2378,11 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste OctoPocus: Berlin");
                         mThread24.start();
                     }
                 });
+                dlgTest1.setView(img);
                 dlgTest1.setCancelable(true);
                 dlgTest1.create().show();
             }
@@ -2153,6 +2400,7 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int wichButton) {
                         dialog.dismiss();
+                        objectInfo.setText("Geste Menu: Berlin");
                     }
                 });
                 dlgTest1.setCancelable(true);
@@ -2162,6 +2410,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void Experimentation16()
     {
+        final ImageView img = new ImageView(this);
+        img.setImageResource(R.drawable.paris);
         MainActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -2172,9 +2422,11 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int wichButton){
                         dialog.dismiss();
+                        objectInfo.setText("Geste OctoPocus: Paris");
                         mThread25.start();
                     }
                 });
+                dlgTest1.setView(img);
                 dlgTest1.setCancelable(true);
                 dlgTest1.create().show();
             }
@@ -2192,21 +2444,12 @@ public class MainActivity extends AppCompatActivity {
                 dlgTest1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int wichButton) {
                         dialog.dismiss();
+                        objectInfo.setText("Geste Menu: Paris");
                     }
                 });
                 dlgTest1.setCancelable(true);
                 dlgTest1.create().show();
             }
         });
-    }
-    public void ResultExperimentation(){
-        for(int i = 0; i < 16; i++)
-        {
-            Log.i("RESULTAT", "Expérience OctoPocus "+i+": Temps: " + tempsExp[i] + " Erreur: " + erreurExp[i]);
-        }
-        for(int i = 0; i < 16; i++)
-        {
-            Log.i("RESULTAT", "Expérience Menu "+i+": Temps: " + tempsExpM[i] + " Erreur: " + erreurExpM[i]);
-        }
     }
 }

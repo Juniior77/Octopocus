@@ -1,18 +1,22 @@
 [
     {
-        "merged": "C:\\Users\\Guillaume\\Desktop\\Octopocus\\OctoPocusOk\\C:\\Users\\VILAIRE\\Documents\\GitHub\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "C:\\Users\\Guillaume\\Desktop\\Octopocus\\OctoPocusOk\\C:\\Users\\VILAIRE\\Documents\\GitHub\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\color-v23\\abc_color_highlight_material.xml"
+        "merged": "/Users/Guillaume/AndroidStudioProjects/Octopocus/OctoPocusOk/app/build/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml",
+        "source": "/Users/Guillaume/AndroidStudioProjects/Octopocus/OctoPocusOk/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/color-v23/abc_color_highlight_material.xml"
     },
     {
-        "merged": "C:\\Users\\Guillaume\\Desktop\\Octopocus\\OctoPocusOk\\C:\\Users\\Guillaume\\Desktop\\OctoPocus-master\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "C:\\Users\\Guillaume\\Desktop\\Octopocus\\OctoPocusOk\\C:\\Users\\Guillaume\\Desktop\\OctoPocus-master\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\color-v23\\abc_color_highlight_material.xml"
+        "merged": "/Users/Guillaume/AndroidStudioProjects/Octopocus/OctoPocusOk/C:\\Users\\Guillaume\\Desktop\\Octopocus\\OctoPocusOk\\C:\\Users\\VILAIRE\\Documents\\GitHub\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "/Users/Guillaume/AndroidStudioProjects/Octopocus/OctoPocusOk/C:\\Users\\Guillaume\\Desktop\\Octopocus\\OctoPocusOk\\C:\\Users\\VILAIRE\\Documents\\GitHub\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\color-v23\\abc_color_highlight_material.xml"
     },
     {
-        "merged": "C:\\Users\\Guillaume\\Desktop\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "C:\\Users\\Guillaume\\Desktop\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\color-v23\\abc_color_highlight_material.xml"
+        "merged": "/Users/Guillaume/AndroidStudioProjects/Octopocus/OctoPocusOk/C:\\Users\\Guillaume\\Desktop\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "/Users/Guillaume/AndroidStudioProjects/Octopocus/OctoPocusOk/C:\\Users\\Guillaume\\Desktop\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\color-v23\\abc_color_highlight_material.xml"
     },
     {
-        "merged": "C:\\Users\\VILAIRE\\Documents\\GitHub\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "C:\\Users\\VILAIRE\\Documents\\GitHub\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\color-v23\\abc_color_highlight_material.xml"
+        "merged": "/Users/Guillaume/AndroidStudioProjects/Octopocus/OctoPocusOk/C:\\Users\\Guillaume\\Desktop\\Octopocus\\OctoPocusOk\\C:\\Users\\Guillaume\\Desktop\\OctoPocus-master\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "/Users/Guillaume/AndroidStudioProjects/Octopocus/OctoPocusOk/C:\\Users\\Guillaume\\Desktop\\Octopocus\\OctoPocusOk\\C:\\Users\\Guillaume\\Desktop\\OctoPocus-master\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\color-v23\\abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "/Users/Guillaume/AndroidStudioProjects/Octopocus/OctoPocusOk/C:\\Users\\VILAIRE\\Documents\\GitHub\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "/Users/Guillaume/AndroidStudioProjects/Octopocus/OctoPocusOk/C:\\Users\\VILAIRE\\Documents\\GitHub\\Octopocus\\OctoPocusOk\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\color-v23\\abc_color_highlight_material.xml"
     }
 ]
